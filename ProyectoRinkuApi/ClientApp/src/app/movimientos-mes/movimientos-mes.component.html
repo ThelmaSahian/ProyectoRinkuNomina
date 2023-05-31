@@ -1,0 +1,71 @@
+<section class="mb-3 mt-3">
+    <div class="row justify-content-between">
+        <span class="col-auto raleway-title">Movimientos por mes</span>
+        <div class="col-auto">
+            <dx-button       
+                class="button-main-action float-right"
+                (click)="abrirModalAgregarMovmiento()"
+                >
+                <i class="fas fa-edit icon-color mr-4"></i>Nuevo
+            </dx-button>
+        </div>
+    </div>
+</section>
+<div class="div-movimientos-data-grid">
+    <dx-data-grid
+        id="TableMovimientos"
+        class="mx-auto table-striped table-responsive"
+        [dataSource]="this.data"
+        focusRowEnabled="true"
+        noDataText="No hay resultados para mostrar"
+        [showBorders]="true"
+        width="100%"
+        #entregasGrid
+    >
+        <dxo-paging id="PaginaMovimientosBuscar" [pageSize]="10"></dxo-paging>
+        <dxo-pager
+            id="PagerMovimientosBuscar"
+            [allowedPageSizes]="[5, 10, 20]"
+            infoText="Página {0} de {1} ({2} Resultados)"
+            [showInfo]="true"
+            [showPageSizeSelector]="true"
+        >
+        </dxo-pager>
+        <dxi-column
+            aligment="left"
+            [allowFixing]="false"
+            caption="Número Empleado"
+            dataField="numeroEmpleado"
+        >
+        </dxi-column>
+        <dxi-column
+            aligment="left"
+            [allowFixing]="false"
+            caption="Nombre"
+            dataField="nombre"
+        >
+        </dxi-column>
+        <dxi-column
+            aligment="left"
+            [allowFixing]="false"
+            caption="Rol"
+            dataField="rol"
+        >
+        </dxi-column>
+        <dxi-column
+            aligment="left"
+            [allowFixing]="false"
+            caption="Mes"
+            dataField="mes"
+        >
+        </dxi-column>
+        <dxi-column
+            aligment="left"
+            [allowFixing]="false"
+            caption="Cantidad de entregas"
+            dataField="cantidadEntregas"
+        >
+        </dxi-column>
+    </dx-data-grid>
+</div>
+<app-formulario-agregar-empleado #agregarEntrega (consultarEntrega)="consultaEntrega()"></app-formulario-agregar-empleado>

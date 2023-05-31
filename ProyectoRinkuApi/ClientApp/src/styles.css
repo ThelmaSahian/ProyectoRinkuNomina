@@ -1,0 +1,483 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+/* code {
+  color: #e01a76;
+} */
+
+/* .btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+} */
+
+
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+
+/* @font-face{
+  font-family: "Raleway";
+  src:url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700');
+}
+@font-face{
+  font-family:"Roboto";
+  src:url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+} */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css'; 
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css'; 
+@import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css'; 
+/* @import '../node_modules/@syncfusion/ej2-pdfviewer/styles/material.css'; */
+@import '../node_modules/@syncfusion/ej2-notifications/styles/material.css';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+p,
+ul,
+ol,
+table,
+label {
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", "sans-serif" !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+}
+
+a {
+  color: #0366d6;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", "sans-serif";
+}
+
+/* Fuente Raleway*/
+.raleway {
+  font-family: "Raleway" !important;
+  color: #222222 !important;
+}
+/*estilos para letra en tooltips*/
+.texto-tooltip {
+  font-family: "Raleway" !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+.Roboto {
+  font-family: "Roboto" !important;
+}
+
+.btn-secondary-action {
+  color: #ddd !important;
+  background-color: #666 !important;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  border: solid 1px #666 !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+}
+
+.btn-secondary-action:hover,
+.btn-secondary-action:focus,
+.btn-secondary-action:active {
+  color: #fff !important;
+  background-color: #908233 !important;
+  border: solid 1px #908233 !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+}
+
+/*Botón de acciones principales (verde con hover oro)*/
+.button-main-action {
+  color: #fff !important;
+  background-color: #3fa978 !important;
+  -webkit-transition: all 0.5s ease !important;
+  transition: all 0.5s ease !important;
+  -webkit-appearance: none !important;
+  border: solid 1px !important;
+  border-color: #3fa978 !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+}
+
+.button-main-action:hover,
+.button-main-action:focus,
+.button-main-action:active {
+  color: #fff !important;
+  background-color: #908233 !important;
+  border-color: #908233 !important ;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+}
+
+/* Título que corresponde al nombre del módulo */
+.h3 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* Espacio entre la card header y el título del nombre del módulo */
+.div-card-espacio-h3 {
+  padding: 18px 28px 18px 28px;
+}
+
+/* Border de los botones de crear*/
+.border-button-crear {
+  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  border: none !important;
+  padding: 5px 20px 5px 20px !important;
+}
+
+/*Color de los íconos de las tablas*/
+.icon-color {
+  color: #01233f !important;
+  cursor: pointer !important;
+}
+
+/*Hover de los íconos de las tablas*/
+.icon-color:hover {
+  color: #908233 !important;
+  cursor: pointer !important;
+}
+
+.titulo-form-crearcausa {
+  color: #999999;
+  font-weight: bold;
+  font-size: 17px;
+  /* margin-left: 24px; */
+  /* position: relative;
+  top: 14px; */
+}
+
+.requeridos {
+  color: red;
+}
+
+.cerrar-form-crearcausa {
+  font-size: 25px;
+  color: #dc0909;
+  float: right;
+  position: relative;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Inputs deshabilitados*/
+
+.deshabilitar, .deshabilitar-input {
+  background-color: #e8e8e8 !important;
+}
+
+.exhorto-crear-deshabilitar {
+  background-color: #e8e8e8 !important;
+}
+
+
+
+
+/*Sobreescribí la clase de adjuntar documento para que estuviera deshabilidato*/
+
+.form-control:disabled {
+  background-color: #e8e8e8 !important;
+  opacity: 1 !important;
+}
+
+/*Estilo del breadcrumb*/
+.breadcrumb {
+  background-color: transparent !important;
+  margin-bottom: 0px;
+  padding-bottom: 5px !important;
+}
+
+/*Estilo del ícono de información en las búsquedas*/
+.icon-information {
+  font-size: 12px;
+}
+
+.icon-information i {
+  color: blue;
+}
+
+/*Estilo del button toggle */
+
+button:focus {
+  box-shadow: 0 0 0 0 !important;
+}
+
+
+/*Estilo del button toggle activo */
+.button-toggle-activo {
+  background-color: #908233 !important;
+  color: white !important;
+  /* border-color:#908233 ; */
+  border: none !important;
+}
+
+/*Estilo del button toggle inactivo */
+.button-toggle-inactivo:hover {
+  background-color: #908233 !important;
+  color: white !important;
+  transition-duration: 0.4s !important;
+  border-color: #908233 !important;
+}
+
+/* DIV Card Principal */
+
+.div-card-principal {
+  width: 100% !important;
+  position: relative !important;
+  display: -webkit-box !important;
+  display: flex !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  word-wrap: break-word !important;
+  background-color: #fff !important;
+  background-clip: border-box !important;
+}
+
+/* Estilos del boton cancelar */
+.button-cancelar-action {
+  border: none !important;
+  color: #999 !important;
+}
+
+/* Estilos del hover del boton cancelar */
+.button-cancelar-action:hover {
+  color: #fff !important;
+  background-color: #908233 !important;
+  border-color: #908233 !important;
+  transition-duration: 0.5s;
+}
+
+/* Estilo del * para datos obligatorios */
+.icon-requeridos {
+  color: red !important;
+}
+
+/*ICONOS MÁS GRANDES*/
+.iconlg{
+  margin-bottom: 0px !important;
+  font-size: 20px !important;
+}
+
+/* Fuente Raleway para títulos de modal*/
+.raleway-title-modal {
+  font-family: "Raleway" !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+.icon-table-color-white {
+  cursor: pointer !important;
+  color: white !important;
+}
+.icon-table-color-white:hover {
+  cursor: pointer !important;
+  color: white !important;
+}
+
+/* Estilo boton dev extreme */
+
+.btn-dev-extreme {
+  font-weight: 400 !important;
+
+  padding: 3px 7px 3px 7px !important;
+  font-size: 16px !important;
+  font-family: "roboto" !important;
+}
+
+.btn-dev-extreme-pequeno {
+  padding: 9px 4px 9px 4px !important;
+  font-size: 16px !important;
+  font-family: "roboto" !important;
+}
+
+:host ::ng-deep .custom-spinner circle {
+  stroke: #0cc20c;
+}
+
+/* Texto Bandera de SI/NO */
+
+.span-bandera-si-verde {
+  background-color: green;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 7%;
+  font-size: 14px;
+}
+.span-bandera-no-rojo {
+  background-color: red;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 7%;
+  font-size: 14px;
+}
+.i-bandera-estatus-rojo {
+  background-color: red;
+  color: red;
+  padding: 3px 6px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.i-bandera-estatus-verde {
+  background-color: green;
+  color: green;
+  padding: 3px 6px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.i-bandera-activo {
+  background-color: green;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.i-pregunta {
+  color: #336699;
+}
+
+*,
+*:focus,
+*:hover,
+button:focus {
+  outline: none;
+}
+
+.disable-selection {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+/************************************/
+
+.fa-asterisk {
+  color: red;
+  font-size: 7px;
+  vertical-align: super;
+  position: relative;
+  left: -2px;
+}
+
+.disabled-dx {
+  background-color: #d4d4d4 !important;
+}
+
+::ng-deep .buttons-crear .dx-button .dx-button-content {
+  padding: 10px 10px!important;
+  font-family: Roboto,sans-serif!important;
+}
+.inline-block {
+  display: inline-block!important;
+}
+
+/*CLASE DE LOS SPAN QUE SON BANDERAS DE VERDE O ROJO EN REGISTROS DE UNA TABLA*/
+.span-umc-modal-bandera-rojo {
+  background-color: red;
+  color: white;
+  padding: 4px 11px;
+  border-radius: 9%;
+  font-size: 13px;
+}
+.span-umc-modal-bandera-verde {
+  background-color: green;
+  color: white;
+  padding: 4px 9px;
+  border-radius: 9%;
+  font-size: 13px;
+}
+.buttom-seleccionar {
+  padding: 6px 13px !important;
+  font-size: 15px !important;
+}
+
+/*PARA ENCABEZADOS DE SECCIONES*/
+.raleway-title {
+  font-family: "Raleway", sans-serif !important;
+  color: #222222 !important;
+  font-size: 25px !important;
+  margin-bottom: 0.5rem;
+}
+
+/*PARA ENCABEZADOS DE SECCIÓN BUSQUEDA*/
+.raleway-title-search{
+  font-size: 22px !important;
+  color: #222222 !important;
+}
+
+.raleway-title-2{
+  font-size: 18px !important;
+}
+
+.sub-title{
+  border: solid 1px #D9DADB;
+  background-color: #F8F9FA;
+  border-radius: 5px;
+}
+
+/*ESTILO DE CARDS*/
+.card {
+  width: 100%;
+  box-shadow: 2px 3px 4px 0px #b7b6b6;
+}
+.mat-expansion-panel-header{
+  height: 30px !important;
+}
+.mat-expansion-panel-body{
+  background-color: white;
+}
+.card-body {
+  padding: 17px !important;
+  background-color: white !important;
+}
+
+
+.mat-menu-content:not(:empty){
+  padding: 0px !important;
+}
+
+.mat-menu-item{
+  height: 30px !important;
+  line-height: 30px !important;
+}
+tr.dx-row.dx-selection[aria-selected="true"] > td{
+  background-color: #0091d497 !important;
+}
+
+/* ESTILOS DEL TOOLTIP */
+::ng-deep .tooltipModal .tooltip-inner{
+  background-color: #336699 !important;
+}
+
+::ng-deep .tooltipModal .arrow::before {
+  border-top-color: #336699 !important;
+  display: none;
+}

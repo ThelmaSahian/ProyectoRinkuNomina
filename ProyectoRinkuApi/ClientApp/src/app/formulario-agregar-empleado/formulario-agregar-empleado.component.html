@@ -1,0 +1,118 @@
+<ng-template #content let-modal>
+    <div class="header-modal">
+      <span class="raleway-title-modal">Agrega empleado</span>
+    </div>
+    <div class="modal-body" >
+      <form>
+        <div class="">
+          <div class="col-lg-3">
+            <label>Nombre:</label>
+            <dx-text-box
+                id="idNombreEmpleado"
+                [disabled]="false"
+                placeholder="Ingrese nombre"
+                [showClearButton]="true"
+                width="98%"
+                [(value)]="this.model.nombre"
+                [maxLength]="200"
+                valueChangeEvent="keyup"
+                >
+                <dx-validator id="idValidadorNombre"
+                    [validationGroup]="groupValidationEmpleado">
+                    <dxi-validation-rule type="required" message="Ingrese nombre">
+                    </dxi-validation-rule>
+                </dx-validator>
+            </dx-text-box>
+          </div>
+        </div>  
+        <div class="">
+            <div class="col-lg-3">
+              <label>Apellido Paterno:</label>
+              <dx-text-box
+                    [disabled]="false"
+                    placeholder="Ingrese apellido paterno"
+                    [showClearButton]="true"
+                    width="98%"
+                    [(value)]="this.model.apellidoPaterno"
+                    [maxlength]="200"
+                >
+                <dx-validator id="idValidadorAP"
+                    [validationGroup]="groupValidationEmpleado">
+                    <dxi-validation-rule type="required" message="Ingrese apellido paterno">
+                    </dxi-validation-rule>
+                </dx-validator>
+              </dx-text-box>
+            </div>
+        </div>  
+        <div class="">
+            <div class="col-lg-3">
+            <label>Apellido Materno:</label>
+            <dx-text-box
+                [disabled]="false"
+                placeholder="Ingrese apellido materno"
+                [showClearButton]="true"
+                width="98%"
+                [(value)]="this.model.apellidoMaterno"
+                [maxlength]="200"
+            >
+                <dx-validator id="idValidadorAM"
+                    [validationGroup]="groupValidationEmpleado">
+                    <dxi-validation-rule type="required" message="Ingrese apellido materno">
+                    </dxi-validation-rule>
+                </dx-validator>
+            </dx-text-box>
+            </div>
+        </div>  
+        <div class="">
+          <div class="col-lg-3">
+            <label>Número:</label>
+            <dx-text-box
+                [disabled]="false"
+                placeholder="Ingrese número identificable"
+                [showClearButton]="true"
+                width="98%"
+                [(value)]="this.model.numeroEmpleado"
+                type="number" 
+                min="0" 
+                max="100"
+                >
+                <dx-validator id="idValidadorNumEmpleado"
+                    [validationGroup]="groupValidationEmpleado">
+                    <dxi-validation-rule type="required" message="Ingrese número identificable">
+                    </dxi-validation-rule>
+                </dx-validator>
+            </dx-text-box>
+          </div>
+        </div>
+  
+        <div class="">
+          <div class="col-lg-3">
+            <label
+              >Rol</label
+            >
+            <dx-select-box 
+                [dataSource]="this.tiposRoles"
+                placeholder="Seleccione un rol" 
+                [showClearButton]="true" 
+                width="100%" 
+                displayExpr="text" 
+                valueExpr="id"
+                [(value)]="this.model.idRol"
+                >
+                <dx-validator id="idValidadorRol"
+                    [validationGroup]="groupValidationEmpleado">
+                    <dxi-validation-rule type="required" message="Seleccione un rol">
+                    </dxi-validation-rule>
+                </dx-validator>
+             </dx-select-box>
+            </div>
+        </div>
+    </form >
+    </div>
+    <dx-button AllowAnimation="false" class="button-cancelar-action mr-3" (onClick)="cancelarModal()"
+        ><i class="fas fa-ban mr-1"></i> Cancelar
+    </dx-button>
+    <dx-button AllowAnimation="false" class="button-main-action" (onClick)="guardarEmpleado($event)"
+        [validationGroup]="groupValidationEmpleado"><i class="fas fa-check mr-1"></i> Guardar
+    </dx-button>
+</ng-template>

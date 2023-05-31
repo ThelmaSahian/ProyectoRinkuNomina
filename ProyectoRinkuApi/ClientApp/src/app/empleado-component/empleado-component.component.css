@@ -1,0 +1,116 @@
+.div-empleado-data-grid {
+    /* min-height: 210px !important; */
+    display: grid !important;
+  }
+  
+  ::ng-deep .dx-tooltip-wrapper .dx-overlay-content .dx-popup-content {
+    background-color: #336699 !important;
+    color: white !important;
+  }
+  
+  ::ng-deep .dx-tooltip-wrapper.dx-popover-wrapper .dx-popover-arrow:after {
+    background-color: #336699 !important;
+  }
+  ::ng-deep .example-tooltip-red {
+    background: #336699;
+  }
+  
+   /*ESTILOS PARA EL BOTON DE EXPORTAR*/
+   ::ng-deep #TableBtnExportar .dx-toolbar-items-container .dx-toolbar-item .dx-button{
+    color: #fff !important;
+    background-color: #3fa978 !important;
+    -webkit-transition: all 0.5s ease !important;
+    transition: all 0.5s ease !important;
+    -webkit-appearance: none !important;
+    border: solid 1px !important;
+    border-color: #3fa978 !important;
+    border-radius: 4px !important;
+  }
+  
+  ::ng-deep #TableBtnExportar .dx-toolbar-items-container .dx-toolbar-item .dx-button .dx-button-content{
+    padding: 8px !important;
+  }
+  
+  ::ng-deep #TableBtnExportar .dx-toolbar-items-container .dx-toolbar-item .dx-button:hover{
+    color: #fff !important;
+    background-color: #908233 !important;
+    border-color: #908233 !important ;
+    border-radius: 4px !important;
+  }
+  
+  ::ng-deep #TableBtnExportar .dx-toolbar-after .dx-button-mode-contained .dx-icon{
+    color: white !important;
+    font-size: 15px !important;
+  }
+  
+  
+  /*Estilos para las tablas*/
+  ::ng-deep
+    .dx-datagrid-rowsview
+    .dx-selection.dx-row:not(.dx-row-focused):hover:not(.dx-row-lines)
+    > td
+    .dx-datagrid-rowsview {
+    border-bottom: none !important;
+    border-top: none !important;
+  }
+  ::ng-deep
+    .dx-datagrid-rowsview
+    .dx-selection.dx-row:not(.dx-row-focused):not(.dx-row-lines)
+    > td {
+    border-bottom: 1px solid #e6e6e6 !important;
+    border-top: 1px solid #e6e6e6 !important;
+  }
+  ::ng-deep .dx-widget {
+    font-weight: 400;
+    font-size: 12px;
+    font-family: "Helvetica Neue", "Segoe UI", helvetica, verdana, sans-serif;
+    line-height: 1.35715;
+    border-radius: 6px !important;
+  }
+  
+  ::ng-deep .dx-datagrid-text-content {
+    color: black !important;
+  }
+  ::ng-deep .dx-freespace-row {
+    height: 0px !important;
+  }
+  ::ng-deep .dx-header-row  {
+    background-color: white !important;
+    font-weight: bold !important;
+    color: #333 !important;
+  }
+  ::ng-deep .dx-datagrid-header-panel {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0px;
+    padding-top: 10px;
+  }
+  ::ng-deep .dx-datagrid-rowsview .dx-row > .dx-master-detail-cell{
+    padding: 15px !important;
+  }
+  /*Fin de estilos para las tablas*/
+  
+  .icon-color {
+    color: #01233f !important;
+    cursor: pointer;
+  }
+  
+  /*Hover de los íconos de las tablas*/
+  .icon-color:hover {
+    color: #908233 !important;
+    cursor: pointer;
+  }
+  
+  /*CENTRAR ELEMENTOS DE LA TABLA*/
+  ::ng-deep .dx-datagrid-content .dx-datagrid-table .dx-row>td {
+    vertical-align: middle !important;
+  }
+
+  .btn {
+    background-color: #dddddd;
+    color: #999999; 
+    border-radius: 0px;
+    padding: 5px 40px 5px 40px;
+    border-top: solid 1px #bbb9b9;
+    border-bottom: solid 1px #bbb9b9;
+    max-height: 40px;
+  }
