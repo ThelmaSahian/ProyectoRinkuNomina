@@ -49,8 +49,9 @@ export class FormularioEntregasEmpleadoComponent implements OnInit {
       return;
     }
     let obj = {
-      idRol: this.model.idEmpleado,
+      idEmpleado: this.model.idEmpleado,
       fechaEntrega: this.model.mes,
+      cantidadEntregas: this.model.cantidadEntregas
     }
 
 
@@ -91,9 +92,13 @@ export class FormularioEntregasEmpleadoComponent implements OnInit {
   }
 
   changeEmpleado(event: any){
-    let empleado = this.listaEmpleados.find(x => event.idEmpleado == x.idEmpleado);
+    let empleado = this.listaEmpleados.find(x => event.value == x.id);
     this.model.nombre = empleado.text;
     this.model.numeroEmpleado = empleado.numeroEmpleado;
     this.model.idRol = empleado.idRol;
+  }
+
+  changeDate(event: any){
+    this.model.mes = event.value;
   }
 }

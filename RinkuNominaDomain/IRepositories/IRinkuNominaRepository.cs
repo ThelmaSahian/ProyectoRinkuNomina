@@ -25,5 +25,18 @@ namespace RinkuNomina.Domain.IRepositories
         /// <returns></returns>
 
         bool CreateEmpleado(Empleado inputModel);
+
+        /// <summary>
+        /// Servicio para obtener todos los empleados
+        /// </summary>
+        /// <returns></returns>
+        Task<IList<EntregasPorEmpleado>> GetAllEntregasEmpleados();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputModel"></param>
+        /// <returns></returns>
+        bool CreateEntregasEmpleado(EntregasPorEmpleado inputModel);
     }
 }

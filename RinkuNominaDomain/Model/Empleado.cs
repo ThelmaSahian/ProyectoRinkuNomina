@@ -1,9 +1,10 @@
 ﻿using RinkuNomina.Domain.Common;
+using RinkuNominaDomain.Common;
 using System.ComponentModel.DataAnnotations;
 
 namespace RinkuNominaDomain.Model
 {
-    public class Empleado : IBitacora
+    public class Empleado : IBitacora, IEmpleados
     {
         [Key]
         [Required]

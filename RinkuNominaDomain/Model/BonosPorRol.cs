@@ -16,7 +16,7 @@ namespace RinkuNomina.Domain.Model
         public Guid IdTipoBono { get; set; }
 
         [Required]
-        public int Cantidad { get; set; }
+        public decimal Cantidad { get; set; }
 
         [Required]
         public Guid IdFrecuenciaBono { get; set; }

@@ -15,7 +15,7 @@
                 displayExpr="text" 
                 valueExpr="id"
                 [(value)]="this.model.idEmpleado"
-                [disabled]="true"
+                [disabled]="false"
                 (onValueChanged)="changeEmpleado($event)"
                 >
                 <dx-validator id="idValidadorEmpleado"
@@ -52,11 +52,6 @@
                   [(value)]="this.model.idRol"
                   [disabled]="true"
                   >
-                  <dx-validator id="idValidadorRol"
-                      [validationGroup]="groupValidationEntrega">
-                      <dxi-validation-rule type="required" message="Seleccione un rol">
-                      </dxi-validation-rule>
-                  </dx-validator>
                </dx-select-box>
               </div>
           </div>
@@ -64,31 +59,37 @@
             <div class="col-lg-3">
             <label>Mes:</label>
             <!-- <input type="month" [[(value)]="this.model.mes"> -->
-            <dx-text-box
-                displayFormat="MM"
+            <dx-date-box 
+                displayFormat="MMM"
                 pickerType="calendar" 
-                placeholder="mm" 
+                placeholder="Seleccione el mes" 
                 [showClearButton]="true" 
-                type="date"
                 [[(value)]="this.model.mes" 
+                (onValueChanged)="changeDate($event)"
             >
                 <dx-validator id="idValidadorMes"
                     [validationGroup]="groupValidationEntrega">
                     <dxi-validation-rule type="required" message="Ingrese el mes">
                     </dxi-validation-rule>
                 </dx-validator>
-            </dx-text-box>
+            </dx-date-box >
             </div>
         </div>  
         <div class="">
             <div class="col-lg-3">
               <label>Cantidad de entregas:</label>
               <dx-text-box
-                [disabled]="true"
+                [disabled]="false"
                 [showClearButton]="true"
                 width="98%"
                 [(value)]="this.model.cantidadEntregas"
+                placeholder="Ingrese la cantidad de entregas" 
                 >
+                <dx-validator id="idValidadorCantidadEntregas"
+                    [validationGroup]="groupValidationEntrega">
+                    <dxi-validation-rule type="required" message="Ingrese la cantidad de entregas">
+                    </dxi-validation-rule>
+                </dx-validator>
             </dx-text-box>
             </div>
         </div>

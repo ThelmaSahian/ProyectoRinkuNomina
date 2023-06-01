@@ -1,3 +1,4 @@
+<app-nav-menu></app-nav-menu>
 <section class="mb-3 mt-3">
     <div class="row justify-content-between">
         <span class="col-auto raleway-title">Empleados</span>
@@ -22,6 +23,10 @@
         width="100%"
         #empleadoGrid
     >
+        <dxo-header-filter
+            [visible]="true">
+        </dxo-header-filter>
+        <dxo-search-panel [visible]="true"></dxo-search-panel>
         <dxo-paging id="PaginaEmpleadosBuscar" [pageSize]="10"></dxo-paging>
         <dxo-pager
             id="PagerEmpleadosBuscar"

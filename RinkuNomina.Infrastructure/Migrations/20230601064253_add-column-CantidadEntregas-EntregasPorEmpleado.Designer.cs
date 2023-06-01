@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RinkuNomina.Application;
 
@@ -11,9 +12,11 @@ using RinkuNomina.Application;
 namespace RinkuNomina.Infrastructure.Migrations
 {
     [DbContext(typeof(RinkuContext))]
-    partial class RinkuContextModelSnapshot : ModelSnapshot
+    [Migration("20230601064253_add-column-CantidadEntregas-EntregasPorEmpleado")]
+    partial class addcolumnCantidadEntregasEntregasPorEmpleado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,9 +40,6 @@ namespace RinkuNomina.Infrastructure.Migrations
                     b.Property<DateTime?>("FechaModificacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("HorasTrabajadas")
-                        .HasColumnType("int");
-
                     b.Property<Guid>("IdEmpleado")
                         .HasColumnType("uniqueidentifier");
 
@@ -49,17 +49,8 @@ namespace RinkuNomina.Infrastructure.Migrations
                     b.Property<Guid?>("IdUsuarioModificacion")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("PagoTotalBonos")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Retencion")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("SueldoTotal")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Vales")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Total")
+                        .HasColumnType("int");
 
                     b.HasKey("IdBitacoraSueldo");
 
@@ -75,8 +66,8 @@ namespace RinkuNomina.Infrastructure.Migrations
                         .HasDefaultValueSql("NEWSEQUENTIALID()")
                         .HasComment("Llave principal de la tabla");
 
-                    b.Property<decimal>("Cantidad")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
@@ -144,8 +135,8 @@ namespace RinkuNomina.Infrastructure.Migrations
                         .HasDefaultValueSql("NEWSEQUENTIALID()")
                         .HasComment("Llave principal de la tabla");
 
-                    b.Property<decimal>("CantidadEntregas")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("CantidadEntregas")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
@@ -244,8 +235,8 @@ namespace RinkuNomina.Infrastructure.Migrations
                         .HasDefaultValueSql("NEWSEQUENTIALID()")
                         .HasComment("Llave principal de la tabla");
 
-                    b.Property<decimal>("CantidadPorHora")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("CantidadPorHora")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");

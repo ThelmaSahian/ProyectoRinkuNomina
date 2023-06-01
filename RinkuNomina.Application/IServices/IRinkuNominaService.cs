@@ -30,5 +30,12 @@ namespace RinkuNomina.Application.IServices
         /// <param name="inputModel"></param>
         /// <returns></returns>
         int CreateEmpleado(EmpleadoInputModel inputModel);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputModel"></param>
+        /// <returns></returns>
+        int CreateEntregasEmpleado(EntregasEmpleadoInputModel inputModel);
     }
 }

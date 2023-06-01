@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RinkuNomina.Application;
 
@@ -11,9 +12,11 @@ using RinkuNomina.Application;
 namespace RinkuNomina.Infrastructure.Migrations
 {
     [DbContext(typeof(RinkuContext))]
-    partial class RinkuContextModelSnapshot : ModelSnapshot
+    [Migration("20230601080323_update-int-to-decimal")]
+    partial class updateinttodecimal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -144,8 +147,8 @@ namespace RinkuNomina.Infrastructure.Migrations
                         .HasDefaultValueSql("NEWSEQUENTIALID()")
                         .HasComment("Llave principal de la tabla");
 
-                    b.Property<decimal>("CantidadEntregas")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("CantidadEntregas")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");

@@ -26,5 +26,7 @@ namespace RinkuNomina.Domain.Model
         public DateTime? FechaModificacion { get; set; }
 
         public Guid? IdUsuarioModificacion { get; set; }
+
+        public decimal CantidadEntregas { get; set; }
     }
 }

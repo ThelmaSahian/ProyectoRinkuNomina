@@ -13,7 +13,7 @@ namespace RinkuNomina.Domain.Model
         public Guid IdEmpleado { get; set; }
 
         [Required]
-        public int CantidadPorHora { get; set; }
+        public decimal CantidadPorHora { get; set; }
 
         [Required]
         public DateTime FechaCreacion { get; set; }

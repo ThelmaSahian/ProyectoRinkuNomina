@@ -76,5 +76,30 @@ namespace RinkuNomina.Application.Services
                 return 2;
             }
         }
+
+        public int CreateEntregasEmpleado(EntregasEmpleadoInputModel inputModel)
+        {
+            IList<EntregasPorEmpleado> list = _rinkuNominaRepository.GetAllEntregasEmpleados().Result;
+            EntregasPorEmpleado empleadoFind = list.FirstOrDefault(x => x.IdEmpleado == inputModel.IdEmpleado);
+            if (empleadoFind != null)
+            {
+                return 1;
+            }
+            EntregasPorEmpleado empleado = new()
+            {
+                IdEmpleado = inputModel.IdEmpleado,
+                FechaEntrega = inputModel.FechaEntrega,
+                CantidadEntregas = inputModel.CantidadEntregas,
+            };
+            bool result = _rinkuNominaRepository.CreateEntregasEmpleado(empleado);
+            if (result)
+            {
+                return 0;
+            }
+            else
+            {
+                return 2;
+            }
+        }
     }
 }

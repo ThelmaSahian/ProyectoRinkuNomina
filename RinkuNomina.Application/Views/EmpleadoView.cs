@@ -1,17 +1,19 @@
-﻿namespace RinkuNomina.Application.Views
+﻿using RinkuNominaDomain.Common;
+
+namespace RinkuNomina.Application.Views
 {
     public class EmpleadoView
     {
         public Guid Id { get; set; }
         public string Text { get; set; } = string.Empty;
-        public string NumeroTelefono { get; set; }
+        public int NumeroEmpleado { get; set; }
         public Guid IdRol { get; set; }
 
-        public EmpleadoView(dynamic model)
+        public EmpleadoView(IEmpleados model)
         {
             Id = model.IdEmpleado;
             Text = $"{model.Nombre} {model.ApellidoPaterno} {model.ApellidoMaterno}";
-            NumeroTelefono = model.NumeroTelefono;
+            NumeroEmpleado = model.NumeroEmpleado;
             IdRol = model.IdRol;
         }
     }
