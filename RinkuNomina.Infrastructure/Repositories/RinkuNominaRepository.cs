@@ -4,6 +4,7 @@ using RinkuNomina.Application;
 using RinkuNomina.Domain.IRepositories;
 using RinkuNomina.Domain.Model;
 using RinkuNominaDomain.Model;
+using System.Data;
 
 namespace RinkuNomina.Infrastructure.Repositories
 {
@@ -19,7 +20,7 @@ namespace RinkuNomina.Infrastructure.Repositories
         /// Servicio para obtener todos los empleados
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<Empleado>> GetAllEmpleados()
+        public async Task<List<Empleado>> GetAllEmpleados()
         {
             try
             {
@@ -32,10 +33,10 @@ namespace RinkuNomina.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// Servicio para obtener todos los empleados
+        /// Servicio para obtener todos los roles de empleados
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<RolEmpleado>> GetComboRoles()
+        public async Task<List<RolEmpleado>> GetComboRoles()
         {
             try
             {
@@ -48,7 +49,7 @@ namespace RinkuNomina.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// 
+        /// Servicio para crear un empleado
         /// </summary>
         /// <param name="inputModel"></param>
         /// <returns></returns>
@@ -76,7 +77,7 @@ namespace RinkuNomina.Infrastructure.Repositories
         /// Servicio para obtener todas las entregas por empleado
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<EntregasPorEmpleado>> GetAllEntregasEmpleados()
+        public async Task<List<EntregasPorEmpleado>> GetAllEntregasEmpleados()
         {
             try
             {
@@ -89,7 +90,7 @@ namespace RinkuNomina.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// 
+        /// Servicio para crear las entregas/movimientos por empleado
         /// </summary>
         /// <param name="inputModel"></param>
         /// <returns></returns>
@@ -107,6 +108,71 @@ namespace RinkuNomina.Infrastructure.Repositories
             }
             catch (Exception ex)
             {
+                throw new(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Servicio para consultar las entregas/movimientos por empleado
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetEntregasEmpleadosSP()
+        {
+            DataTable dataTable = new("EntregasEmpleados");
+            string? connection = _context.Database.GetConnectionString();
+            //string? command = "dbo.GetEntregasEmpleados";
+            //FormattableString formattableString = $"{command}";
+            //var result = _context.Database.SqlQuery<dynamic>(formattableString);
+
+            SqlConnection sqlConnection = new(connection);
+            sqlConnection.Open();
+            try
+            {
+                using (SqlCommand cmd = new("dbo.GetEntregasEmpleados", sqlConnection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    using SqlDataReader reader = cmd.ExecuteReader();
+                    dataTable.Clear();
+                    DataColumn[] columns = new DataColumn[] {
+                        new DataColumn("IdEntrega")
+                        , new DataColumn("NumeroEmpleado")
+                        , new DataColumn("Nombre")
+                        , new DataColumn("Rol")
+                        , new DataColumn("Mes")
+                        , new DataColumn("CantidadEntregas")
+                        , new DataColumn("HorasTrabajadas")
+                        , new DataColumn("PagoTotalBonos")
+                        , new DataColumn("Retenciones")
+                        , new DataColumn("Vales")
+                        , new DataColumn("SueldoTotal")
+                    };
+                    dataTable.Columns.AddRange(columns);
+
+                    while (reader.Read())
+                    {
+                        DataRow row = dataTable.NewRow();
+                        row["IdEntrega"] = reader["IdEntrega"];
+                        row["NumeroEmpleado"] = reader["NumeroEmpleado"];
+                        row["Nombre"] = reader["Nombre"];
+                        row["Rol"] = reader["Rol"];
+                        row["Mes"] = reader["Mes"];
+                        row["CantidadEntregas"] = reader["CantidadEntregas"];
+                        row["HorasTrabajadas"] = reader["HorasTrabajadas"];
+                        row["PagoTotalBonos"] = reader["PagoTotalBonos"];
+                        row["Retenciones"] = reader["Retenciones"];
+                        row["Vales"] = reader["Vales"];
+                        row["SueldoTotal"] = reader["SueldoTotal"];
+                        dataTable.Rows.Add(row);
+
+                    }
+                }
+                sqlConnection.Close();
+
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                sqlConnection.Close();
                 throw new(ex.Message);
             }
         }

@@ -23,7 +23,7 @@ namespace ProyectoRinkuApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<ComboView>> GetCombo()
         {
-            IList<ComboView> data = await _rinkuNominaService.GetComboRoles();
+            List<ComboView> data = await _rinkuNominaService.GetComboRoles();
             return data;
         }
     }

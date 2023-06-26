@@ -21,6 +21,8 @@
         noDataText="No hay resultados para mostrar"
         [showBorders]="true"
         width="100%"
+        (onExporting)="onExporting($event)"
+        (onToolbarPreparing)="onToolbarPreparing($event)"
         #empleadoGrid
     >
         <dxo-header-filter

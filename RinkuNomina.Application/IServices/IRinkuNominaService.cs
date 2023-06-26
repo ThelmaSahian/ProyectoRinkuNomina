@@ -10,19 +10,19 @@ namespace RinkuNomina.Application.IServices
         /// Servicio para obtener todos los empleados
         /// </summary>
         /// <returns></returns>
-        Task<IList<Empleado>> GetAllEmpleados();
+        Task<List<Empleado>> GetAllEmpleados();
 
         /// <summary>
         /// Servicio para obtener todos los empleados y convertirlos en combo
         /// </summary>
         /// <returns></returns>
-        Task<IList<EmpleadoView>> GetComboEmpleados();
+        Task<List<EmpleadoView>> GetComboEmpleados();
 
         /// <summary>
         /// Servicio para obtener todos los roles y convertirlos en combo
         /// </summary>
         /// <returns></returns>
-        Task<IList<ComboView>> GetComboRoles();
+        Task<List<ComboView>> GetComboRoles();
 
         /// <summary>
         /// 
@@ -37,5 +37,11 @@ namespace RinkuNomina.Application.IServices
         /// <param name="inputModel"></param>
         /// <returns></returns>
         int CreateEntregasEmpleado(EntregasEmpleadoInputModel inputModel);
+
+        /// <summary>
+        /// Servicio para consultar las entregas/movimientos por empleado
+        /// </summary>
+        /// <returns></returns>
+        List<EntregasEmpleadoView> GetEntregasEmpleadosSP();
     }
 }

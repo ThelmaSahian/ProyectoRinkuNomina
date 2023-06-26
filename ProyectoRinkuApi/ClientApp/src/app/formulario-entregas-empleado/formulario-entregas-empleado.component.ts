@@ -63,7 +63,7 @@ export class FormularioEntregasEmpleadoComponent implements OnInit {
           this.consultarEntrega.emit();
         }
         else if(result == 1)
-          notify('El empelado ya tiene su entregas registradas para este mes.', 'error', 2000);
+          notify('El empleado ya tiene sus entregas registradas para este mes.', 'error', 2000);
         else if(result == 2)
           notify('Hubo un error al guardar las entregas.', 'error', 2000);
       }, 

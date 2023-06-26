@@ -21,6 +21,8 @@
             noDataText="No hay resultados para mostrar"
             [showBorders]="true"
             width="100%"
+            (onExporting)="onExporting($event)"
+            (onToolbarPreparing)="onToolbarPreparing($event)"
             #entregasGrid
         >
         <dxo-header-filter
@@ -39,10 +41,13 @@
         <dxi-column
             aligment="left"
             [allowFixing]="false"
-            caption="Número Empleado"
             dataField="numeroEmpleado"
+            headerCellTemplate="numeroEmpleado"
         >
         </dxi-column>
+        <div *dxTemplate="let data of 'numeroEmpleado'">
+            <p class="mb-0">Número<br>Empleado</p>
+        </div>
         <dxi-column
             aligment="left"
             [allowFixing]="false"

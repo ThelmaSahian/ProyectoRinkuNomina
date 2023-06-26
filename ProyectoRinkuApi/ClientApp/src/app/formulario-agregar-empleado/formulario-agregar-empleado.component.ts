@@ -89,4 +89,12 @@ export class FormularioAgregarEmpleadoComponent implements OnInit {
     this.model.numeroEmpleado = null;
     this.model.idRol = null;
   }
+
+  restriccionLetrasYPuntos(e: any) {
+    const event = e.event;
+    const str = event.key || String.fromCharCode(event.which);
+    if (/^[-.,e]$/.test(str)) {
+      event.preventDefault();
+    }
+  }
 }

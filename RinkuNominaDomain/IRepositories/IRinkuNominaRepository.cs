@@ -1,5 +1,6 @@
 ﻿using RinkuNomina.Domain.Model;
 using RinkuNominaDomain.Model;
+using System.Data;
 
 namespace RinkuNomina.Domain.IRepositories
 {
@@ -9,14 +10,14 @@ namespace RinkuNomina.Domain.IRepositories
         /// Servicio para obtener todos los empleados
         /// </summary>
         /// <returns></returns>
-        Task<IList<Empleado>> GetAllEmpleados();
+        Task<List<Empleado>> GetAllEmpleados();
 
         /// <summary>
         /// Servicio para obtener todos los roles y convertirlos en combo
         /// </summary>
         /// <returns></returns>
 
-        Task<IList<RolEmpleado>> GetComboRoles();
+        Task<List<RolEmpleado>> GetComboRoles();
 
         /// <summary>
         /// 
@@ -30,7 +31,7 @@ namespace RinkuNomina.Domain.IRepositories
         /// Servicio para obtener todos los empleados
         /// </summary>
         /// <returns></returns>
-        Task<IList<EntregasPorEmpleado>> GetAllEntregasEmpleados();
+        Task<List<EntregasPorEmpleado>> GetAllEntregasEmpleados();
 
         /// <summary>
         /// 
@@ -38,5 +39,11 @@ namespace RinkuNomina.Domain.IRepositories
         /// <param name="inputModel"></param>
         /// <returns></returns>
         bool CreateEntregasEmpleado(EntregasPorEmpleado inputModel);
+
+        /// <summary>
+        /// Servicio para consultar las entregas/movimientos por empleado
+        /// </summary>
+        /// <returns></returns>
+        DataTable GetEntregasEmpleadosSP();
     }
 }

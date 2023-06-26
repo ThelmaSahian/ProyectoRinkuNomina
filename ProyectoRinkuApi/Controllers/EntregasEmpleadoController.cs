@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RinkuNomina.Application.InputModels;
 using RinkuNomina.Application.IServices;
+using RinkuNomina.Application.Views;
 
 namespace ProyectoRinkuApi.Controllers
 {
@@ -14,7 +15,7 @@ namespace ProyectoRinkuApi.Controllers
             _rinkuNominaService = rinkuNominaService;
         }
 
-        // GET: EmpleadosController/CreateEmpleado
+        // POST: EmpleadosController/CreateEmpleado
         /// <summary>
         /// Servicio para obtener todos los empleados
         /// </summary>
@@ -23,6 +24,17 @@ namespace ProyectoRinkuApi.Controllers
         public int CreateEntregasEmpleado(EntregasEmpleadoInputModel inputModel)
         {
             return _rinkuNominaService.CreateEntregasEmpleado(inputModel);
+        }
+
+        // GET: EmpleadosController/GetEntregasEmpleadosSP
+        /// <summary>
+        /// Servicio para obtener todos los empleados
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<EntregasEmpleadoView> GetEntregasEmpleadosSP()
+        {
+            return _rinkuNominaService.GetEntregasEmpleadosSP();
         }
     }
 }

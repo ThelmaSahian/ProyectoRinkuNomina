@@ -24,7 +24,7 @@ namespace ProyectoRinkuApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<Empleado>> GetAll()
         {
-            IList<Empleado> data = await _rinkuNominaService.GetAllEmpleados();
+            List<Empleado> data = await _rinkuNominaService.GetAllEmpleados();
             return data;
         }
 
@@ -36,7 +36,7 @@ namespace ProyectoRinkuApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<EmpleadoView>> GetComboEmpleados()
         {
-            IList<EmpleadoView> data = await _rinkuNominaService.GetComboEmpleados();
+            List<EmpleadoView> data = await _rinkuNominaService.GetComboEmpleados();
             return data;
         }
 
