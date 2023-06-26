@@ -101,4 +101,12 @@ export class FormularioEntregasEmpleadoComponent implements OnInit {
   changeDate(event: any){
     this.model.mes = event.value;
   }
+
+  restriccionLetrasYPuntos(e: any) {
+    const event = e.event;
+    const str = event.key || String.fromCharCode(event.which);
+    if (/^[-.,e+]$/.test(str)) {
+      event.preventDefault();
+    }
+  }
 }

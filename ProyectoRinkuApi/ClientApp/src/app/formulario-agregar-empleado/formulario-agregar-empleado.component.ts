@@ -93,7 +93,7 @@ export class FormularioAgregarEmpleadoComponent implements OnInit {
   restriccionLetrasYPuntos(e: any) {
     const event = e.event;
     const str = event.key || String.fromCharCode(event.which);
-    if (/^[-.,e]$/.test(str)) {
+    if (/^[-.,e+]$/.test(str)) {
       event.preventDefault();
     }
   }

@@ -78,19 +78,22 @@
         <div class="">
             <div class="col-lg-3">
               <label>Cantidad de entregas:</label>
-              <dx-text-box
+              <dx-number-box
                 [disabled]="false"
                 [showClearButton]="true"
                 width="98%"
                 [(value)]="this.model.cantidadEntregas"
                 placeholder="Ingrese la cantidad de entregas" 
+                [min]="0" 
+                [max]="2147483647"
+                (onKeyDown)="restriccionLetrasYPuntos($event)"
                 >
                 <dx-validator id="idValidadorCantidadEntregas"
                     [validationGroup]="groupValidationEntrega">
                     <dxi-validation-rule type="required" message="Ingrese la cantidad de entregas">
                     </dxi-validation-rule>
                 </dx-validator>
-            </dx-text-box>
+                </dx-number-box>
             </div>
         </div>
     </form >
