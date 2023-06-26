@@ -66,6 +66,7 @@
                 [showClearButton]="true" 
                 [[(value)]="this.model.mes" 
                 (onValueChanged)="changeDate($event)"
+                [max]="this.dateMax"
             >
                 <dx-validator id="idValidadorMes"
                     [validationGroup]="groupValidationEntrega">

@@ -20,6 +20,7 @@ export class FormularioEntregasEmpleadoComponent implements OnInit {
   abrirModal: boolean = false;
   _baseUrl: string;
   tiposRoles: any[];
+  dateMax: Date = new Date();
 
   constructor(private modalService: NgbModal, http: HttpClient, @Inject('BASE_URL') baseUrl: string) { 
     this._http = http;

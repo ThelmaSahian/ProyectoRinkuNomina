@@ -86,7 +86,7 @@ namespace RinkuNomina.Application.Services
         public int CreateEntregasEmpleado(EntregasEmpleadoInputModel inputModel)
         {
             List<EntregasPorEmpleado> list = _rinkuNominaRepository.GetAllEntregasEmpleados().Result;
-            EntregasPorEmpleado? empleadoFind = list.FirstOrDefault(x => x.IdEmpleado == inputModel.IdEmpleado);
+            EntregasPorEmpleado? empleadoFind = list.FirstOrDefault(x => x.IdEmpleado == inputModel.IdEmpleado && x.FechaEntrega.Month == inputModel.FechaEntrega.Month);
             if (empleadoFind != null)
             {
                 return 1;
