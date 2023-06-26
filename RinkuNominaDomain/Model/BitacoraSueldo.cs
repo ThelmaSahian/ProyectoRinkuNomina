@@ -36,5 +36,7 @@ namespace RinkuNomina.Domain.Model
 
         [Required]
         public decimal SueldoTotal { get; set; }
+
+        public Guid? IdEntregaEmpleado { get; set; }
     }
 }
